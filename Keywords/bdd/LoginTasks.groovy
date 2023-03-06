@@ -19,15 +19,14 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 
 import internal.GlobalVariable
-import login.LoginActions
+import bdd.LoginActions
 
 public class LoginTasks {
-	
+
 	def doLogin(userName, password) {
 		LoginActions login = new LoginActions()
 		login.enterUserName(userName)
 		login.enterPassword(password)
 		login.clickOnLogin()
 	}
-	
 }
