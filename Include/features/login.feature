@@ -1,10 +1,21 @@
 
 Feature: Login
-  I want to login on CURA platform
+   As a registered user
+  I want to log into my account
+  So that I can access my personal data
 
-  Scenario: login into the application with valid user
-  	Given I want to manage my account
-    When I send credentials to login
-    Then I should be able to access to my account
+    Scenario Outline: Log in with valid credentials
+    Given that user is on the login page
+    When user enters userName as '<userName>' and password as '<password>'
+    Then user should be redirected to the Appointment Page
+    And see in the Toggle Menu the options History Profile and Logout
+    
+    Examples:
+      | userName   | password           |
+      | John Doe   | ThisIsNotAPassword |
+ 
+
+
+    
    
       

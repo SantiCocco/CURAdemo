@@ -1,9 +1,34 @@
 {
-  "keywordFileContentHash": "CBA95234017CDEE8C94F4323CA34CFED",
+  "keywordFileContentHash": "FAA0BC7917F1119EB7B4B9B2265E4E75",
   "keywordClasses": [
     {
       "name": "navigate.NavigateTo",
-      "keywordMethods": []
+      "keywordMethods": [
+        {
+          "name": "openBrowserToCURAHomePage",
+          "parameters": [
+            {
+              "name": "url",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "java.lang.Object",
+                "unresolvedClassName": "java.lang.Object",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": true,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            }
+          ],
+          "javadoc": ""
+        },
+        {
+          "name": "loginPage",
+          "parameters": [],
+          "javadoc": ""
+        }
+      ]
     }
   ],
   "javadocParsed": true

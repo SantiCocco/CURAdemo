@@ -1,9 +1,42 @@
 {
-  "keywordFileContentHash": "AB93ABE79506595A8B88981EE8FFD4A9",
+  "keywordFileContentHash": "CF2631A96DE3BE103C6ED089FA660D5B",
   "keywordClasses": [
     {
       "name": "curaLogin.Login",
-      "keywordMethods": []
+      "keywordMethods": [
+        {
+          "name": "doLogin",
+          "parameters": [
+            {
+              "name": "userName",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "java.lang.Object",
+                "unresolvedClassName": "java.lang.Object",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": true,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            },
+            {
+              "name": "password",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "java.lang.Object",
+                "unresolvedClassName": "java.lang.Object",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": true,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            }
+          ],
+          "javadoc": ""
+        }
+      ]
     }
   ],
   "javadocParsed": true

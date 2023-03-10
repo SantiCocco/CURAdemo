@@ -1,4 +1,4 @@
-package curaLogin
+package bdd
 
 import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
@@ -20,13 +20,15 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 
 import internal.GlobalVariable
 
-public class Login {
-	
-	@Keyword
-	def doLogin(userName,password) {
-		WebUI.setText(findTestObject('Object Repository/login/input_Username'), userName)
-		WebUI.setText(findTestObject('Object Repository/login/input_Password'), password)
-		WebUI.click(findTestObject('Object Repository/login/button_Login'))
+public class Navigate {
+
+	def homePage() {
+		WebUI.openBrowser(GlobalVariable.cura_url)
+		WebUI.maximizeWindow()
 	}
 	
+	def loginPage() {
+		WebUI.click(findTestObject('Object Repository/homePage/a_menuToggle'))
+		WebUI.click(findTestObject('Object Repository/homePage/a_menuOptionLogin'))
+	}
 }

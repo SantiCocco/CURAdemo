@@ -21,7 +21,7 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import bdd.LoginTasks
 import bdd.LoginQuestions
 import internal.GlobalVariable
-import navigate.NavigateTo
+import bdd.Navigate
 
 import org.openqa.selenium.WebElement
 import org.openqa.selenium.WebDriver
@@ -49,26 +49,33 @@ import cucumber.api.java.en.When
 
 class LoginSteps {
 
-	@Given("I want to manage my account")
-	public void i_want_to_manage_my_account() {
+	LoginQuestions login = new LoginQuestions()
 
-		NavigateTo navigateTo = new NavigateTo()
-		navigateTo.loginPage()
+	@Given("that user is on the login page")
+	public void that_user_is_on_the_login_page() {
+
+		Navigate goTo = new Navigate()
+		goTo.homePage()
+		goTo.loginPage()
 	}
 
 
-	@When("I send credentials to login")
-	public void i_send_credentials_to_login() {
+	@When("user enters userName as {string} and password as {string}")
+	public void user_enters_userName_as_and_password_as(userName, password) {
 
 		LoginTasks login = new LoginTasks()
-		login.doLogin(GlobalVariable.valid_userName, GlobalVariable.valid_password)
+		login.doLogin(userName, password)
 	}
 
-	@Then("I should be able to access to my account")
-	public void i_should_be_able_to_access_to_my_account() {
-
-		LoginQuestions login = new LoginQuestions()
+	@Then("user should be redirected to the Appointment Page")
+	public void user_should_be_redirected_to_the_Appointment_Page() {
 		login.getLoginConfirmation()
+	}
+
+	@And("see in the Toggle Menu the options History Profile and Logout")
+	public void see_in_the_Toggle_Menu_the_options_History_Profile_and_Logout() {
+
+		login.getLoggedToggleMenuOptions()
 		WebUI.closeBrowser()
 	}
 }

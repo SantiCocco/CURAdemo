@@ -24,15 +24,15 @@ WebUI.openBrowser(GlobalVariable.cura_url)
 WebUI.maximizeWindow()
 
 //Try to make an appointment
-WebUI.click( findTestObject('Object Repository/homePage/a_Make Appointment'))
+WebUI.click( findTestObject('Object Repository/homePage/a_makeAppointment'))
 
 //Enter empty credentials
-WebUI.setText(findTestObject('Object Repository/login/input_Username_username'), "")
-WebUI.setText(findTestObject('Object Repository/login/input_Password_password'), "")
+WebUI.setText(findTestObject('Object Repository/login/input_Username'), "")
+WebUI.setText(findTestObject('Object Repository/login/input_Password'), "")
 WebUI.click(findTestObject('Object Repository/login/button_Login'))
 
 //Verify error message appears
-WebUI.verifyElementPresent(findTestObject('Object Repository/login/p_Login failed text') , 0)
+WebUI.verifyElementPresent(findTestObject('Object Repository/login/p_loginFailedText') , 0)
 
 //Close browser
 WebUI.closeBrowser()

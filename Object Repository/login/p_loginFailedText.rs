@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>p_Login failed text</name>
+   <name>p_loginFailedText</name>
    <tag></tag>
    <elementGuidId>90824e6a-6328-469f-9d4c-99b0775d3e2a</elementGuidId>
    <selectorCollection>

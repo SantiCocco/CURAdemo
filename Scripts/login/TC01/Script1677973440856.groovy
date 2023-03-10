@@ -10,7 +10,8 @@ import com.kms.katalon.core.model.FailureHandling as FailureHandling
 import com.kms.katalon.core.testcase.TestCase as TestCase
 import com.kms.katalon.core.testdata.TestData as TestData
 import com.kms.katalon.core.testng.keyword.TestNGBuiltinKeywords as TestNGKW
-import com.kms.katalon.core.testobject.TestObject as TestObject
+import com.kms.katalon.core.testobject.TestObject
+import com.kms.katalon.core.util.KeywordUtil
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
@@ -19,17 +20,12 @@ import org.openqa.selenium.Keys as Keys
 
 //Login with valid credentials
 
-//Open Browser
-WebUI.openBrowser(GlobalVariable.cura_url)
-WebUI.maximizeWindow()
+//Open Browser and navigate to Cura Home Page
+CustomKeywords.'navigate.NavigateTo.openBrowserToCURAHomePage'(GlobalVariable.cura_url)
 
-//Try to make an appointment
-WebUI.click( findTestObject('Object Repository/homePage/a_Make Appointment'))
-
-//Enter credentials and login
-WebUI.setText(findTestObject('Object Repository/login/input_Username_username'), GlobalVariable.valid_userName)
-WebUI.setText(findTestObject('Object Repository/login/input_Password_password'), GlobalVariable.valid_password)
-WebUI.click(findTestObject('Object Repository/login/button_Login'))
+//Navigate to Login Page and do login
+CustomKeywords.'navigate.NavigateTo.loginPage'()
+CustomKeywords.'curaLogin.Login.doLogin'(GlobalVariable.valid_userName, GlobalVariable.valid_password )
 
 //Verify succesfull login
 assert WebUI.getUrl() == "https://katalon-demo-cura.herokuapp.com/#appointment"

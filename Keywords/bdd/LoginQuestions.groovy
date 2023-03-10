@@ -28,4 +28,11 @@ public class LoginQuestions {
 		KeywordUtil.logInfo("Obtained url is: " + WebUI.getUrl())
 		WebUI.verifyElementPresent( findTestObject('Object Repository/MakeAppointment/select_facility'), 0)
 	}
+	
+	def getLoggedToggleMenuOptions() {
+		WebUI.click(findTestObject('Object Repository/homePage/a_menuToggle'))
+		WebUI.verifyElementPresent(findTestObject('Object Repository/homePage/a_menuOptionHistory') , 0)
+		WebUI.verifyElementPresent(findTestObject('Object Repository/homePage/a_menuOptionProfile') , 0)
+		WebUI.verifyElementPresent(findTestObject('Object Repository/homePage/a_menuOptionLogout') , 0)
+	}
 }

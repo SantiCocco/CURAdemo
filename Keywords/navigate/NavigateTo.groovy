@@ -21,13 +21,16 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable
 
 public class NavigateTo {
-	
-	def loginPage() {
-		WebUI.openBrowser(GlobalVariable.cura_url)
+
+	@Keyword
+	def openBrowserToCURAHomePage(url) {
+		WebUI.openBrowser(url)
 		WebUI.maximizeWindow()
-		WebUI.click( findTestObject('Object Repository/homePage/a_Make Appointment'))
 	}
-	
-	
-	
+
+	@Keyword
+	def loginPage() {
+		WebUI.click(findTestObject('Object Repository/homePage/a_menuToggle'))
+		WebUI.click(findTestObject('Object Repository/homePage/a_menuOptionLogin'))
+	}
 }

@@ -41,11 +41,11 @@ import com.kms.katalon.core.webui.exception.WebElementNotFoundException
 class LoginActions {
 
 	def enterUserName(userName) {
-		WebUI.setText(findTestObject('Object Repository/login/input_Username_username'), userName)
+		WebUI.setText(findTestObject('Object Repository/login/input_Username'), userName)
 	}
 
 	def enterPassword(password) {
-		WebUI.setText(findTestObject('Object Repository/login/input_Password_password'), password)
+		WebUI.setText(findTestObject('Object Repository/login/input_Password'), password)
 	}
 
 	def clickOnLogin() {
